@@ -1,6 +1,6 @@
 # Obstruction Removal
 
-This is an implementation of this [repo](https://github.com/alex04072000/ObstructionRemoval).
+This is a simplified implementation of this [repo](https://github.com/alex04072000/ObstructionRemoval).
 The main repo requires online optimiziation for the reflection removal and so the model is left
 unfrozen. This makes it difficult to set up. This repo uses a frozen version of the 
 obstruction removal model(which
