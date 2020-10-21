@@ -10,3 +10,6 @@ The test.py file shows how to use the network.
 
 The frozen model is [here](https://drive.google.com/file/d/1zB0W0aMzey2tCI8SX3jKJrFAeTWdO6ga/view?usp=sharing).
 The test file expects the file to be in the top level, but this can be edited.
+
+Using this frozen model requires A LOT of RAM (20+GB). But it can be run on the CPU in a reasonable amount of
+time (~10 mins).
