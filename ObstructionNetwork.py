@@ -6,7 +6,6 @@ import tensorflow as tf
 from tensorflow.core.framework.graph_pb2 import GraphDef
 
 # Network I/O
-INPUT_NAMES = ["Placeholder:0", "Placeholder_1:0", "Placeholder_2:0", "Placeholder_3:0", "Placerholder_4:0"]
 OUTPUT_NAMES = ["FusionLayer_B_0_2/add_9:0", "Select:0"]
 
 class ObstructionNetwork():
@@ -24,16 +23,14 @@ class ObstructionNetwork():
 
         @tf.function
         def network_function(I0, I1, I2, I3, I4):
-            # inputs = {}
-            # input_images = [I0, I1, I2, I3, I4]
-            # for idx in range(5):
-            #     inputs[INPUT_NAMES[idx]] = input_images[idx]
-
-            inputs = {"Placeholder:0":I0, "Placeholder_1:0":I1, "Placeholder_2:0":I2, "Placeholder_3:0":I3, "Placeholder_4:0":I4}
-            outputs = ["FusionLayer_B_0_2/add_9:0", "Select:0"]
+            inputs = {"Placeholder:0":I0, 
+                    "Placeholder_1:0":I1, 
+                    "Placeholder_2:0":I2, 
+                    "Placeholder_3:0":I3, 
+                    "Placeholder_4:0":I4}
             alpha, background = tf.graph_util.import_graph_def(graph_def,
                     input_map=inputs,
-                    return_elements=outputs)
+                    return_elements=OUTPUT_NAMES)
             return alpha, background
 
         self._network = network_function 
